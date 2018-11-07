@@ -14,7 +14,7 @@ Thanks to Simon Wheatley for contributing the fix.
 */
 
 function sort_merged_comments($a, $b) { 
-	return $a->comment_ID - $b->comment_ID;
+	return date('U', strtotime($a->comment_date_gmt)) - date('U', strtotime($b->comment_date_gmt));
 }
 
 function merge_comments($comments, $post_ID) {
