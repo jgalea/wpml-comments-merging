@@ -37,7 +37,7 @@ function merge_comments($comments, $post_ID) {
 		usort($comments, 'sort_merged_comments');
 	}
 	//
-	add_filter( 'comments_clauses', array( $sitepress, 'comments_clauses' ) );
+	add_filter( 'comments_clauses', array( $sitepress, 'comments_clauses' ), 10, 2 );
 
 	return $comments;
 }
